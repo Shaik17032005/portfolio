@@ -1,85 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Font Awesome (Fixed Version) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Custom Tailwind Utilities -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      @keyframes type {
+        0% { width: 0ch; } 
+        60% { width: 12ch; }
+        100% { width: 0ch; }
+      }
+      @keyframes blink {
+        0%, 100% { border-right: transparent; }
+        50% { border-right: 3px solid white; }
+      }
+      .animate-typing {
+        animation: type 3s steps(12) infinite, blink 0.5s step-end infinite;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="h-[100vh]">
-    <div class="flex size-full bg-cover bg-center" >
-    <div class="h-full w-1/5 bg-black py-6">
-        <div class="w-full h-1/6 flex justify-center items-center "> 
-            <img src="" alt="image" class="w-[120px] h-[120px] rounded-full border-6 border-gray-800">
+
+<body class="h-screen bg-white">
+  <div class="flex size-full">
+    
+    <!-- Sidebar -->
+    <div class="h-full w-1/5 min-w-[220px] bg-black flex flex-col sticky top-0">
+      <!-- Profile Section -->
+      <div class="w-full h-[300px] pt-8 flex flex-col gap-4">
+        <div class="w-full h-2/5 flex justify-center">
+          <img src="./profile pic.png" alt="profile photo" class="w-[120px] h-[120px] rounded-full border-4 border-[#333] object-cover">
         </div>
-        <div class="w-full h-1/7 flex justify-center items-center">
-            <h1 class="font-bold font-serif text-white text-xl"><a href="http://127.0.0.1:5500/index.html">Shaik Imran</a></h1>
+        <div class="flex justify-center items-center text-white text-xl font-bold">
+          <h1 class="py-2">Shaik Imran</h1>
         </div>
-        <div class="w-full h-1/30 flex justify-evenly justify-center items-center text-white px-2">
-            <div class="bg-gray-800 hover:bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center text-xl transition-colors">
-                <a href="https://x.com/home">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-            </div>
-            <div class="bg-gray-800 hover:bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center text-xl transition-colors">
-                <a href="">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-            </div>
-            <div class="bg-gray-800 hover:bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center text-xl transition-colors">
-                <a href="https://www.instagram.com/#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-            </div>
-            <div class="bg-gray-800 hover:bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center text-xl transition-colors">
-                <a href="">
-                    <i class="fa-brands fa-skype"></i>
-                </a>
-            </div>
-            <div class="bg-gray-800 hover:bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center text-xl transition-colors">
-                <a href="">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-            </div>
+
+        <!-- Social Links -->
+        <div class="w-full h-1/5 px-2 flex justify-around">
+          <div class="w-[40px] h-[40px] rounded-full bg-[#333] flex justify-center items-center text-white hover:bg-blue-400 transition-all duration-500">
+            <a href="#"><i class="fa-brands fa-x-twitter text-base"></i></a>
+          </div>
+          <div class="w-[40px] h-[40px] rounded-full bg-[#333] flex justify-center items-center text-white hover:bg-blue-400 transition-all duration-500">
+            <a href="#"><i class="fa-brands fa-facebook text-base"></i></a>
+          </div>
+          <div class="w-[40px] h-[40px] rounded-full bg-[#333] flex justify-center items-center text-white hover:bg-blue-400 transition-all duration-500">
+            <a href="#"><i class="fa-brands fa-instagram text-base"></i></a>
+          </div>
+          <div class="w-[40px] h-[40px] rounded-full bg-[#333] flex justify-center items-center text-white hover:bg-blue-400 transition-all duration-500">
+            <a href="#"><i class="fa-brands fa-skype text-base"></i></a>
+          </div>
+          <div class="w-[40px] h-[40px] rounded-full bg-[#333] flex justify-center items-center text-white hover:bg-blue-400 transition-all duration-500">
+            <a href="#"><i class="fa-brands fa-linkedin text-base"></i></a>
+          </div>
         </div>
-     <div class="text-white  py-8  px-4">
-           <div  class="py-2">
-            <span><i class="fa-solid fa-house"></i></span>
-            <span >Home</span>
+      </div>
+
+      <!-- Navigation -->
+      <div class="text-[#a8a9b4] flex flex-col gap-10 justify-center px-6 text-xl">
+        <div class="flex gap-6 group hover:text-white transition-all duration-300 cursor-pointer">
+          <span><i class="fa-solid fa-house group-hover:text-blue-400"></i></span>
+          <a href="#home">Home</a>
         </div>
-         <div class="py-3">
-            <span><i class="fa-solid fa-address-card"></i></span>
-            <span>About</span>
+        <div class="flex gap-6 group hover:text-white transition-all duration-300 cursor-pointer">
+          <span><i class="fa-regular fa-user group-hover:text-blue-400"></i></span>
+          <a href="#about">About</a>
         </div>
-        <div class="py-3">
-            <span><i class="fa-solid fa-file"></i></span>
-            <span>Resume</span>
+        <div class="flex gap-6 group hover:text-white transition-all duration-300 cursor-pointer">
+          <span><i class="fa-regular fa-file group-hover:text-blue-400"></i></span>
+          <a href="#resume">Resume</a>
         </div>
-         <div class="py-3">
-            <span><i class="fa-solid fa-briefcase"></i></span>
-            <span>Portfolio</span>
+        <div class="flex gap-6 group hover:text-white transition-all duration-300 cursor-pointer">
+          <span><i class="fa-solid fa-photo-film group-hover:text-blue-400"></i></span>
+          <a href="#portfolio">Portfolio</a>
         </div>
-        <div  class="py-3">
-            <span><i class="fa-brands fa-servicestack"></i></span>
-            <span>Service</span>
+        <div class="flex gap-6 group hover:text-white transition-all duration-300 cursor-pointer">
+          <span><i class="fa-solid fa-server group-hover:text-blue-400"></i></span>
+          <a href="#service">Service</a>
         </div>
-         <div  class="py-3">
-            <span><i class="fa-solid fa-address-book"></i></span>
-            <span>Contact</span>
+        <div class="flex gap-6 group hover:text-white transition-all duration-300 cursor-pointer">
+          <span><i class="fa-solid fa-envelope group-hover:text-blue-400"></i></span>
+          <a href="#contact">Contact</a>
         </div>
-     </div>
-        
+      </div>
     </div>
-    <div class="w-4/5 h-full overflow-y-scroll ">
-        <div class="w-full  h-[100vh] bg-black/50 bg-[url(https://www.royalchallengers.com/PRRCB01/public/styles/1061x767_landscape/public/2024-11/dl.beatsnoop.com-3000-eLySPQ7UOJ.jpg?itok=ia-DH33f)] bg-cover flex justify-center flex-col p-8 gap-4 bg-blend-multiply">
-            <h1 class="font-bold text-white text-4lx">Shaik Imran</h1>
-            <h2 class="font-bold text-white text-2lx flex " ><span class="typing">I Am Developer</span></h2>
+
+    <!-- Main Content -->
+    <div class="w-4/5 h-full overflow-y-scroll">
+      
+      <!-- Hero Section -->
+      <div id="home" class="w-full h-screen bg-black/50 bg-[url('./bg-image.jpg')] bg-cover bg-center bg-blend-multiply flex flex-col justify-center p-8 gap-4">
+        <h1 class="font-bold text-white text-6xl">Shaik Imran</h1>
+        <h2 class="font-bold text-white text-2xl flex gap-2">I'm 
+          <span class="animate-typing border-r-2 border-white pr-2">Developer</span>
+        </h2>
+      </div>
+
+      <!-- About Section -->
+      <div id="about" class="flex flex-col gap-6 p-6">
+        <h1 class="text-4xl font-bold">
+          <span class="border-b-4 border-blue-500 pb-2">About</span>
+        </h1>
+        <p class="pt-6">
+          Shraddha Kapoor is a versatile Indian actress and singer who has made a significant mark in Hindi cinema. Born into a family of film legends, she has carved out her own identity with a unique blend of charm, talent, and dedication.
+        </p>
+        
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/3 h-[400px]">
+            <img src="./bg-image.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+          </div>
+          
+          <div class="md:w-2/3 h-[400px] flex flex-col gap-6 p-4">
+            <h1 class="text-3xl font-bold">UI/UX Designer & Web Developer</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <div class="flex gap-4">
+              <!-- Left Column -->
+              <div class="w-1/2 space-y-2">
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Birthday:</b> 17 March 2005</div>
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Website:</b> www.example.com</div>
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Phone:</b> +91 8790031035</div>
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>City:</b>Hyderabad,Telangana</div>
+              </div>
+              <!-- Right Column -->
+              <div class="w-1/2 space-y-2">
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Age:</b>20</div>
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Degree:</b></div>
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Email:</b> a@gmail.com</div>
+                <div class="flex gap-2"><span class="text-blue-400">></span><b>Freelance:</b> Available</div>
+              </div>
             </div>
 
+            <p>Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div id="about" class="flex flex-col gap-6 p-6">
+         <h1 class="text-4xl font-bold">
+          <span class="border-b-4 border-blue-500 pb-2">Skills</span>
+         </h1>
+          <p class="pt-6">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+         </div>
+         <div></div>
+         <div></div>
+         <div></div>
+
     </div>
-    </div>
-  
+  </div>
 </body>
 </html>

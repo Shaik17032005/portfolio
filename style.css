@@ -1,14 +1,15 @@
-.typing{
-    border-right: .1em solid orange;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing  3.5s steps(30, end), blink-caret .75s step-end infinite;
+::-webkit-scrollbar{
+    display: none;
+}
 
+
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  src: url("./asset/bootstrap-icons.woff2") format("woff2")
 }
-@keyframes typing {
-    from { width: 0 }
-    to { width: 10% }
-     
+@font-face {
+    font-family:"raleway" ;
+    src: url(https://fonts.gstatic.com/s/raleway/v36/1Ptsg8zYS_SKggPNyCg4QIFqPfE.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
-   
-   
